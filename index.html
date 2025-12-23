@@ -1,84 +1,197 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HALAMAN BERANDA</title>
+    <title>Dunia Astronomi</title>
+
+    <!-- ================= CSS ================= -->
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: radial-gradient(circle at top, #2b1055, #000000);
+            color: #ffffff;
+        }
+
+        .container {
+            width: 900px;
+            margin: auto;
+        }
+
+        /* Banner */
+        .banner img {
+            width: 100%;
+            border-radius: 0 0 20px 20px;
+        }
+
+        /* Menu */
+        .menu {
+            text-align: center;
+            background-color: rgba(0,0,0,0.6);
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+
+        .menu a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .menu a:hover {
+            color: #ffd700;
+            text-shadow: 0 0 8px #ffd700;
+        }
+
+        /* Content */
+        .content {
+            padding: 30px;
+            background-color: rgba(255,255,255,0.05);
+            margin-top: 20px;
+            border-radius: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .intro {
+         display: flex;
+         justify-content: center;
+         text-align: center;
+         font-style: italic;
+        color: #ddddff;
+         margin-bottom: 25px;
+        }
+
+        .image-center {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .image-center img {
+            width: 420px;
+            height: 260px;
+            border-radius: 15px;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(255,255,255,0.3);
+            transition: transform 0.3s;
+        }
+
+        .image-center img:hover {
+            transform: scale(1.05);
+        }
+
+        .content p {
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        /* Navigation */
+        .navigation {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .navigation a {
+            display: inline-block;
+            margin: 8px 10px;
+            padding: 8px 15px;
+            border: 1px solid #ffffff;
+            border-radius: 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .navigation a:hover {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #ffffff;
+            color: #000000;
+            border-radius: 20px 20px 0 0;
+            font-weight: bold;
+        }
+    </style>
 </head>
-<body bgcolor="#181040">
 
-    <table width="900" align="center" border="0" cellpadding="5" cellspacing="0">
+<body>
+
+    <div class="container">
+
         <!-- Banner -->
-        <tr>
-            <td align="center">
-                <img src="img/banner.jpg" width="900" alt="Banner Astronomi">
-            </td>
-        </tr>
-        <!-- Banner -->
+        <div class="banner">
+            <img src="img/banner.jpg" alt="Banner Astronomi">
+        </div>
 
         <!-- Menu -->
-        <tr>
-            <td align="center">
-                <font color="white" size="4">
-                    <a href="BERANDA.html"><font color="white">HOME</font></a> |
-                    <a href="GALLERY.html"><font color="white">GALLERY</font></a> |
-                    <a href="CONTACT.html"><font color="white">CONTACT US</font></a> |
-                    <a href="ABOUT US.html"><font color="white">ABOUT US</font></a>
-                </font>
-            </td>
-        </tr>
-        <!-- Menu -->
+        <div class="menu">
+            <a href="index.html">HOME</a>
+            <a href="GALLERY.html">GALLERY</a>
+            <a href="CONTACT.html">CONTACT US</a>
+            <a href="ABOUT US.html">ABOUT US</a>
+        </div>
 
-        <!-- content -->
-        <tr>
-            <td>
-                <font color="white" face="arial" size="4">
-                    <h2 align="center">🌌 <u>Selamat Datang di Dunia Astronomi</u> 🌌</h2>
-                    <p align="center"><i>Menjelajahi misteri alam semesta yang luas, indah, dan penuh rahasia.</i></p>
-                    <br>
+        <!-- Content -->
+        <div class="content">
+            <h2>🌌 Selamat Datang di Dunia Astronomi 🌌</h2>
+            <p class="intro">
+                Menjelajahi misteri alam semesta yang luas, indah, dan penuh rahasia.
+            </p>
 
-                    <p align="center">
-                        <a href="hal 2 astronomi.html">
-                            <img src="img/astronomi  2.jpg" width="400" height="250" alt="Astronomi" title="Astronomi">
-                        </a>
-                    </p>
+            <div class="image-center">
+                <img src="img/astronomi  2.jpg" alt="Astronomi" onclick="infoAstronomi()">
+            </div>
 
-                    <p align="justify">
-                        Astronomi adalah salah satu ilmu tertua yang pernah dipelajari manusia. Sejak zaman kuno, manusia sudah menatap langit malam penuh bintang dengan rasa kagum dan penasaran. Dari Mesir kuno, bangsa Maya, hingga peradaban Yunani, langit selalu menjadi sumber inspirasi, pengetahuan, bahkan pedoman kehidupan.
-                    </p>
+            <p>
+                Astronomi adalah ilmu pengetahuan yang mempelajari benda-benda langit seperti bintang, planet, satelit, asteroid, komet, hingga galaksi. Sejak zaman dahulu, manusia telah mengamati langit malam untuk memahami waktu, musim, dan arah.
+            </p>
 
-                    <p align="justify">
-                        Kini, astronomi berkembang menjadi ilmu modern yang memadukan pengamatan, teknologi, dan teori fisika untuk memahami segala sesuatu di luar Bumi. Astronomi tidak hanya membahas planet dan bintang, tetapi juga menyingkap misteri tentang asal-usul alam semesta, bagaimana galaksi terbentuk, dan apakah ada kehidupan di luar planet kita.
-                    </p>
+            <p>
+                Dengan berkembangnya teknologi teleskop dan ilmu fisika, astronomi modern mampu mengungkap rahasia besar alam semesta, termasuk asal-usul galaksi, lubang hitam, serta kemungkinan adanya kehidupan di luar Bumi.
+            </p>
 
-                    <p align="justify">
-                        Luar angkasa begitu luas dan penuh misteri. Bayangkan, Bumi hanyalah sebuah titik kecil dalam tata surya, dan tata surya kita hanyalah bagian kecil dari Galaksi Bima Sakti yang berisi ratusan miliar bintang. Bahkan, galaksi tempat kita tinggal hanyalah satu dari miliaran galaksi lain di alam semesta.
-                    </p>
+            <p>
+                Alam semesta begitu luas dan menakjubkan. Tata surya kita hanyalah bagian kecil dari Galaksi Bima Sakti, yang berisi ratusan miliar bintang dan mungkin lebih banyak planet yang belum teridentifikasi.
+            </p>
 
-                    <p align="justify">
-                        Website ini akan membawa kamu menjelajahi tiga hal utama: tata surya tempat kita berada, planet-planet yang menakjubkan dengan ciri khasnya masing-masing, serta fenomena kosmik di jagat raya yang luar biasa indah sekaligus penuh teka-teki.
-                    </p>
-
-                    <br>
-                    <center>
-                        <a href="hal 2 astronomi.html"><font color="white">➡️ Lanjut ke Halaman 2 Astronomi</font></a><br>
-                        <a href="hal 3 astronomi.html"><font color="white">➡️ Lanjut ke Halaman 3 Astronomi</font></a>
-                    </center>
-                </font>
-            </td>
-        </tr>
-        <!-- content -->
+            <div class="navigation">
+                <a href="hal 2 astronomi.html">➡️ Halaman 2 Astronomi</a>
+                <a href="hal 3 astronomi.html">➡️ Halaman 3 Astronomi</a>
+            </div>
+        </div>
 
         <!-- Footer -->
-        <tr>
-            <td height="80" bgcolor="#ffffff" align="center">
-                <font color="black">
-                    <b>&copy; copyright [Puji Lestari 25101170058 01SIFP001] - 2025</b>
-                </font>
-            </td>
-        </tr>
-        <!-- Footer -->
-    </table>
+        <footer>
+            &copy; 2025  
+            <br>
+            Puji Lestari | 25101170058 | 01SIFP001
+        </footer>
+
+    </div>
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script>
+        function infoAstronomi() {
+            alert(
+                "Tahukah kamu?\n\n" +
+                "Astronomi membantu manusia memahami asal-usul alam semesta, " +
+                "gerak planet, serta fenomena luar angkasa seperti supernova dan lubang hitam."
+            );
+        }
+    </script>
 
 </body>
 </html>
