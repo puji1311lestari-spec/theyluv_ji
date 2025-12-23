@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misteri Alam Semesta</title>
+
+    <!-- ================= CSS ================= -->
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(to bottom, #0b0620, #181040);
+            color: white;
+        }
+
+        .container {
+            width: 900px;
+            margin: auto;
+        }
+
+        /* Banner */
+        header img {
+            width: 100%;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 0 25px rgba(255,255,255,0.2);
+        }
+
+        /* Menu */
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+            text-shadow: 0 0 6px #ffd700;
+        }
+
+        /* Content */
+        .content {
+            background: rgba(255,255,255,0.05);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(140,120,255,0.25);
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px #8b7bff;
+        }
+
+        /* GAMBAR SAMPING-SAMPINGAN */
+        .image-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .image-row img {
+            width: 400px;
+            height: 250px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(140,120,255,0.4);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .image-row img:hover {
+            transform: scale(1.05);
+        }
+
+        p {
+            text-align: justify;
+            line-height: 1.8;
+            font-size: 16px;
+            color: #e6e3ff;
+        }
+
+        ul {
+            margin-top: 15px;
+            margin-bottom: 25px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        ul li::marker {
+            color: #ffd700;
+        }
+
+        /* Button */
+        .nav-btn {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .nav-btn a {
+            color: white;
+            border: 1px solid #8b7bff;
+            padding: 12px 24px;
+            margin: 8px;
+            display: inline-block;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+
+        .nav-btn a:hover {
+            background-color: #8b7bff;
+            color: #0b0620;
+            box-shadow: 0 0 15px #8b7bff;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            background: white;
+            color: black;
+            text-align: center;
+            padding: 25px;
+            border-radius: 20px 20px 0 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Banner -->
+    <header>
+        <img src="img/banner.jpg" alt="Banner Astronomi">
+    </header>
+
+    <!-- Menu -->
+    <nav>
+        <a href="index.html">HOME</a> |
+        <a href="GALLERY.html">GALLERY</a> |
+        <a href="CONTACT.html">CONTACT US</a> |
+        <a href="ABOUT US.html">ABOUT US</a>
+    </nav>
+
+    <!-- Content -->
+    <div class="content">
+        <h2>🌌 Misteri Alam Semesta 🌌</h2>
+
+        <!-- GAMBAR SAMPING-SAMPINGAN -->
+        <div class="image-row">
+            <img src="img/luar angkasa 1.jpg" alt="Luar Angkasa" onclick="showInfo()">
+            <img src="img/luar angkasa 2.jpg" alt="Galaksi">
+        </div>
+
+        <p>
+            Alam semesta adalah ruang yang sangat luas dan hampir tak terbatas, tempat semua benda
+            langit berada. Di luar tata surya kita, masih terbentang dunia lain yang jauh lebih besar
+            dan penuh misteri.
+        </p>
+
+        <p>
+            Ketika kita menatap langit malam, sebenarnya kita hanya melihat sebagian kecil dari
+            miliaran bintang dan galaksi yang ada.
+        </p>
+
+        <ul>
+            <li><b>Bintang ✨</b> – Bola gas raksasa yang memancarkan cahaya dan panas.</li>
+            <li><b>Galaksi 🌌</b> – Kumpulan bintang dan planet yang terikat gravitasi.</li>
+            <li><b>Nebula ☁️</b> – Awan gas dan debu tempat lahirnya bintang.</li>
+            <li><b>Lubang Hitam 🌀</b> – Gravitasi sangat kuat hingga cahaya tak bisa lolos.</li>
+            <li><b>Supernova 💥</b> – Ledakan besar bintang yang menghasilkan unsur penting.</li>
+        </ul>
+
+        <p>
+            Semakin kita mempelajari alam semesta, semakin kita menyadari betapa kecilnya manusia,
+            namun juga betapa besar rasa ingin tahu untuk memahami keberadaan.
+        </p>
+
+        <div class="nav-btn">
+            <a href="index.html">← Kembali ke HOME</a>
+            <a href="hal 2 astronomi.html">Kembali ke HALAMAN 2 →</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        © 2025  
+        <br>
+        Puji Lestari | 25101170058 | 01SIFP001
+    </footer>
+
+</div>
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+    function showInfo() {
+        alert("Alam semesta sangat luas — apa yang kita lihat hanyalah sebagian kecilnya ✨");
+    }
+</script>
+
+</body>
+</html>

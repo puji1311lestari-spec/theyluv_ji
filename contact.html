@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Astronomi</title>
+
+    <!-- ================= CSS ================= -->
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(to bottom, #0b0620, #181040);
+            color: white;
+        }
+
+        .container {
+            width: 900px;
+            margin: auto;
+        }
+
+        /* Banner */
+        header img {
+            width: 100%;
+            border-radius: 0 0 20px 20px;
+        }
+
+        /* Menu */
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+            text-shadow: 0 0 5px #ffd700;
+        }
+
+        /* Content */
+        .content {
+            background: rgba(255,255,255,0.08);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(140,120,255,0.3);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px #8b7bff;
+        }
+
+        /* Form */
+        form {
+            width: 600px;
+            margin: auto;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            width: auto;
+        }
+
+        .inline {
+            display: flex;
+            gap: 15px;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .buttons input {
+            padding: 10px 25px;
+            margin: 5px;
+            border-radius: 25px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .submit {
+            background: #8b7bff;
+            color: #0b0620;
+        }
+
+        .reset {
+            background: #ff6b6b;
+            color: white;
+        }
+
+        .submit:hover,
+        .reset:hover {
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #ffffff;
+            color: #000000;
+            border-radius: 20px 20px 0 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Banner -->
+    <header>
+        <img src="img/banner.jpg" alt="Banner Astronomi">
+    </header>
+
+    <!-- Menu -->
+    <nav>
+        <a href="index.html">HOME</a> |
+        <a href="GALLERY.html">GALLERY</a> |
+        <a href="CONTACT.html">CONTACT US</a> |
+        <a href="ABOUT US.html">ABOUT US</a>
+    </nav>
+
+    <!-- Content -->
+    <div class="content">
+        <h2>🌌 CONTACT US 🌌</h2>
+
+        <form onsubmit="return kirimData()">
+
+            <div class="form-group">
+                <label>No Telp</label>
+                <input type="number" placeholder="Masukkan No Telp Anda" required>
+            </div>
+
+            <div class="form-group">
+                <label>Nama</label>
+                <input type="text" placeholder="Masukkan Nama Anda" required>
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" placeholder="Masukkan Password" required>
+            </div>
+
+            <div class="form-group">
+                <label>Alamat</label>
+                <textarea rows="3" placeholder="Masukkan Alamat"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Kota</label>
+                <select>
+                    <option>-- Pilih Kota --</option>
+                    <option>Jakarta</option>
+                    <option>Bogor</option>
+                    <option>Bandung</option>
+                    <option>Bali</option>
+                    <option>Surabaya</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Jenis Kelamin</label>
+                <div class="inline">
+                    <label><input type="radio" name="jk"> Laki-laki</label>
+                    <label><input type="radio" name="jk"> Perempuan</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Tanggal Lahir</label>
+                <input type="date">
+            </div>
+
+            <div class="form-group">
+                <label>Pekerjaan</label>
+                <select size="3">
+                    <option>Mahasiswa</option>
+                    <option>Pegawai Negeri</option>
+                    <option>Pegawai Swasta</option>
+                    <option>Siswa</option>
+                    <option>Tidak Bekerja</option>
+                    <option>Pengusaha</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Hobby</label>
+                <label><input type="checkbox"> Menjelajah</label><br>
+                <label><input type="checkbox"> Berpetualang</label><br>
+                <label><input type="checkbox"> Mencari tahu</label>
+            </div>
+
+            <div class="form-group">
+                <label>Upload Dokumen</label>
+                <input type="file">
+            </div>
+
+            <div class="buttons">
+                <input type="submit" value="SIMPAN DATA" class="submit">
+                <input type="reset" value="KOSONGKAN" class="reset">
+            </div>
+
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        © 2025 <br>
+        Puji Lestari | 25101170058 | 01SIFP001
+    </footer>
+
+</div>
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+    function kirimData() {
+        alert("Data berhasil dikirim 🚀 Terima kasih telah menghubungi kami!");
+        return true;
+    }
+</script>
+
+</body>
+</html>

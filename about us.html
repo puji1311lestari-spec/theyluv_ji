@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Astronomi</title>
+
+    <!-- ================= CSS ================= -->
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(to bottom, #0b0620, #181040);
+            color: white;
+        }
+
+        .container {
+            width: 900px;
+            margin: auto;
+        }
+
+        header img {
+            width: 100%;
+            border-radius: 0 0 20px 20px;
+        }
+
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+            text-shadow: 0 0 5px #ffd700;
+        }
+
+        .content {
+            background: rgba(255,255,255,0.08);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(140,120,255,0.3);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px #8b7bff;
+            cursor: pointer;
+        }
+
+        .content p {
+            text-align: justify;
+            line-height: 1.7;
+            color: #e6e3ff;
+        }
+
+        .content ul {
+            margin: 25px 0;
+            padding-left: 20px;
+        }
+
+        .content li {
+            margin-bottom: 12px;
+        }
+
+        .highlight {
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #ffffff;
+            color: #000000;
+            border-radius: 20px 20px 0 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body onload="welcomeMessage()">
+
+<div class="container">
+
+    <!-- Banner -->
+    <header>
+        <img src="img/banner.jpg" alt="Banner Astronomi">
+    </header>
+
+    <!-- Menu -->
+    <nav>
+        <a href="index.html">HOME</a> |
+        <a href="GALLERY.html">GALLERY</a> |
+        <a href="CONTACT.html">CONTACT US</a> |
+        <a href="ABOUT US.html">ABOUT US</a>
+    </nav>
+
+    <!-- Content -->
+    <div class="content">
+        <h2 onclick="judulKlik()">🌌 ABOUT US 🌌</h2>
+
+        <p>
+            Selamat datang di <span class="highlight">Menjelajah Dunia Astronomi</span>, sebuah platform edukasi
+            yang bertujuan mengenalkan keindahan dan misteri alam semesta kepada generasi muda Indonesia.
+        </p>
+
+        <ul>
+            <li>🔭 Artikel tentang planet, bintang, dan galaksi</li>
+            <li>🌠 Informasi peristiwa astronomi</li>
+            <li>🚀 Panduan mengenal dunia perbintangan</li>
+        </ul>
+
+        <p>
+            Kami ingin membuat astronomi terasa dekat, seru, dan mudah dipahami oleh siapa pun.
+            Karena dari satu tatapan ke bintang, lahir rasa ingin tahu yang luar biasa.
+        </p>
+
+        <p class="highlight">
+            ✨ Menjelajah Dunia Astronomi — Jelajahi Semesta, Mulai dari Sini.
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        © 2025 <br>
+        Puji Lestari | 25101170058 | 01SIFP001
+    </footer>
+
+</div>
+
+<!-- ================= JavaScript ================= -->
+<script>
+    function welcomeMessage() {
+        alert("Selamat datang di Menjelajah Dunia Astronomi 🌌");
+    }
+
+    function judulKlik() {
+        alert("Kamu baru saja mengklik judul ABOUT US ✨");
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eksplorasi Tata Surya</title>
+
+    <!-- ================= CSS ================= -->
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            color: #ffffff;
+            background: linear-gradient(to bottom, #0b0620, #181040 60%, #0b0620);
+        }
+
+        .container {
+            width: 900px;
+            margin: auto;
+        }
+
+        /* Header */
+        header img {
+            width: 100%;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 0 25px rgba(255,255,255,0.2);
+        }
+
+        /* Navigation */
+        nav {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        nav a {
+            color: #dcd6ff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+            text-shadow: 0 0 6px #ffd700;
+        }
+
+        /* Content */
+        .content {
+            margin-top: 30px;
+            background: rgba(255,255,255,0.05);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(140,120,255,0.25);
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 25px;
+            text-shadow: 0 0 10px #8b7bff;
+        }
+
+        .content img {
+            display: block;
+            margin: 0 auto 30px;
+            width: 520px;
+            border-radius: 16px;
+            box-shadow: 0 0 30px rgba(140,120,255,0.4);
+        }
+
+        .content p {
+            text-align: justify;
+            font-size: 16px;
+            line-height: 1.8;
+            color: #e6e3ff;
+        }
+
+        /* Planet List */
+        .planet-list {
+            margin-top: 35px;
+            background: linear-gradient(
+                145deg,
+                rgba(255,255,255,0.08),
+                rgba(255,255,255,0.02)
+            );
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 0 20px rgba(120,100,255,0.25);
+        }
+
+        .planet-list h3 {
+            text-align: center;
+            margin-bottom: 18px;
+            color: #ffd700;
+            letter-spacing: 1px;
+        }
+
+        .planet-list ul {
+            columns: 2;
+            list-style: none;
+            padding: 0;
+            font-size: 16px;
+        }
+
+        .planet-list li {
+            margin-bottom: 6px;
+        }
+
+        .planet-list li::before {
+            content: "✦ ";
+            color: #8b7bff;
+        }
+
+        /* Button */
+        .btn-area {
+            text-align: center;
+            margin: 40px 0 10px;
+        }
+
+        .btn {
+            color: #ffffff;
+            border: 1px solid #8b7bff;
+            padding: 12px 24px;
+            text-decoration: none;
+            margin: 8px;
+            display: inline-block;
+            border-radius: 30px;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #8b7bff;
+            color: #0b0620;
+            box-shadow: 0 0 15px #8b7bff;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            background: white;
+            color: black;
+            text-align: center;
+            padding: 25px;
+            border-radius: 20px 20px 0 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <header>
+        <img src="img/banner.jpg" alt="Banner Astronomi">
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html">HOME</a> |
+        <a href="GALLERY.html">GALLERY</a> |
+        <a href="CONTACT.html">CONTACT</a> |
+        <a href="ABOUT US.html">ABOUT</a>
+    </nav>
+
+    <!-- Content -->
+    <div class="content">
+        <h2>🌌 Eksplorasi Tata Surya 🌞</h2>
+
+        <img src="img/tata surya 1.jpg" alt="Tata Surya">
+
+        <p>
+            Tata Surya adalah sistem kosmik yang terdiri dari Matahari sebagai pusat dan delapan planet
+            yang mengelilinginya dalam lintasan orbit. Gaya gravitasi Matahari menjaga keseimbangan
+            seluruh benda langit.
+        </p>
+
+        <p>
+            Selain planet, tata surya juga dihuni oleh asteroid, komet, dan satelit alami yang
+            menyimpan banyak informasi tentang asal-usul alam semesta.
+        </p>
+
+        <p>
+            Dengan mempelajari tata surya, manusia dapat memahami posisi Bumi sebagai bagian kecil
+            dari jagat raya yang sangat luas dan menakjubkan.
+        </p>
+
+        <!-- Planet List -->
+        <div class="planet-list">
+            <h3>✦ Planet di Tata Surya ✦</h3>
+            <ul>
+                <li>Matahari 🌞</li>
+                <li>Merkurius</li>
+                <li>Venus</li>
+                <li>Bumi 🌍</li>
+                <li>Mars 🔴</li>
+                <li>Jupiter</li>
+                <li>Saturnus 💍</li>
+                <li>Uranus</li>
+                <li>Neptunus</li>
+            </ul>
+        </div>
+
+        <!-- Button -->
+        <div class="btn-area">
+            <a href="index.html" class="btn">← Kembali ke Home</a>
+            <a href="hal 3 astronomi.html" class="btn" onclick="showInfo()">Lanjut ke Halaman 3 →</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        © 2025  
+        <br>
+        Puji Lestari | 25101170058 | 01SIFP001
+    </footer>
+
+</div>
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+    function showInfo() {
+        alert("Bersiaplah menjelajahi fenomena astronomi berikutnya ✨");
+    }
+</script>
+
+</body>
+</html>

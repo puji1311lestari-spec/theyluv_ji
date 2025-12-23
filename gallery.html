@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery | Astronomi</title>
+
+    <!-- ================= CSS ================= -->
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(to bottom, #0b0620, #181040);
+            color: white;
+        }
+
+        .container {
+            width: 900px;
+            margin: auto;
+        }
+
+        /* Banner */
+        header img {
+            width: 100%;
+            border-radius: 0 0 20px 20px;
+        }
+
+        /* Menu */
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+            text-shadow: 0 0 5px #ffd700;
+        }
+
+        /* Content */
+        .content {
+            background: rgba(255,255,255,0.08);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(140,120,255,0.3);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px #8b7bff;
+        }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            background: rgba(0,0,0,0.4);
+            border-radius: 15px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(140,120,255,0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(255,215,0,0.6);
+        }
+
+        .gallery-item p {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #ffffff;
+            color: #000000;
+            border-radius: 20px 20px 0 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Banner -->
+    <header>
+        <img src="img/banner.jpg" alt="Banner Astronomi">
+    </header>
+
+    <!-- Menu -->
+    <nav>
+        <a href="index.html">HOME</a> |
+        <a href="GALLERY.html">GALLERY</a> |
+        <a href="CONTACT.html">CONTACT US</a> |
+        <a href="ABOUT US.html">ABOUT US</a>
+    </nav>
+
+    <!-- Content -->
+    <div class="content">
+        <h2>🌌 GALLERY ASTRONOMI 🌌</h2>
+
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="img/astronomi  2.jpg" alt="Gallery 1">
+                <p>Galaxy View</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="img/astronomi 3.jpeg" alt="Gallery 2">
+                <p>Star Field</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="img/astronomi 4.jpeg" alt="Gallery 3">
+                <p>Nebula</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="img/luar angkasa 1.jpg" alt="Gallery 4">
+                <p>Deep Space</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="img/luar angkasa 2.jpg" alt="Gallery 5">
+                <p>Milky Way</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="img/foto astronomi 1.jpg" alt="Gallery 6">
+                <p>Cosmic Light</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        © 2025 <br>
+        Puji Lestari | 25101170058 | 01SIFP001
+    </footer>
+
+</div>
+
+</body>
+</html>
