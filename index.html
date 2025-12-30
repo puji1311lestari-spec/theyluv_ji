@@ -184,17 +184,26 @@
 
     <!-- ================= JAVASCRIPT ================= -->
     <script>
-        function infoAstronomi() {
-            alert(
-                "Tahukah kamu?\n\n" +
-                "Astronomi membantu manusia memahami asal-usul alam semesta, " +
-                "gerak planet, serta fenomena luar angkasa seperti supernova dan lubang hitam."
-            );
-        }
-    </script>
+    function infoAstronomi() {
+        const waktu = new Date().getHours();
+        let pesan;
 
+        if (waktu >= 5 && waktu < 12) {
+            pesan = "Selamat pagi 🌅\nWaktu yang tepat untuk belajar astronomi!";
+        } else if (waktu >= 12 && waktu < 15) {
+            pesan = "Selamat siang ☀️\nMari jelajahi keindahan alam semesta.";
+        } else if (waktu >= 15 && waktu < 18) {
+            pesan = "Selamat sore 🌇\nLangit mulai indah untuk diamati.";
+        } else {
+            pesan = "Selamat malam 🌌\nWaktu terbaik mengamati bintang dan planet.";
+        }
+
+        alert(pesan);
+    }
+</script>
 </body>
 </html>
+
 
 
 
