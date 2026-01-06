@@ -1,210 +1,505 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dunia Astronomi</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dunia Astronomi</title>
 
-    <!-- ================= CSS ================= -->
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background: radial-gradient(circle at top, #2b1055, #000000);
-            color: #ffffff;
-        }
+  <style>
+    :root{
+      --text:#ffffff;
+      --muted:#d7dcff;
+      --gold:#ffd700;
+      --violet:#7c5cff;
+      --cyan:#43d7ff;
+      --glass: rgba(255,255,255,.10);
+      --stroke: rgba(255,255,255,.18);
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
+      --radius: 22px;
+    }
 
-        .container {
-            width: 900px;
-            margin: auto;
-        }
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
 
-        /* Banner */
-        .banner img {
-            width: 100%;
-            border-radius: 0 0 20px 20px;
-        }
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at top, #2b1055, #000000);
+      overflow-x:hidden;
 
-        /* Menu */
-        .menu {
-            text-align: center;
-            background-color: rgba(0,0,0,0.6);
-            padding: 15px;
-            margin-top: 10px;
-            border-radius: 10px;
-        }
+      
+      padding-top: 130px;
+    }
 
-        .menu a {
-            color: #ffffff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
+  
+    body::before{
+      content:"";
+      position: fixed;
+      inset:-10%;
+      pointer-events:none;
+      z-index:-2;
+      opacity:.55;
+      background:
+        radial-gradient(900px 420px at 18% 8%, rgba(124,92,255,.38), transparent 60%),
+        radial-gradient(900px 520px at 80% 18%, rgba(67,215,255,.22), transparent 62%),
+        radial-gradient(800px 520px at 45% 90%, rgba(255,215,0,.10), transparent 62%);
+      filter: blur(12px);
+    }
+    body::after{
+      content:"";
+      position: fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:-1;
+      opacity:.55;
+      background-image:
+        radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,.95), transparent 60%),
+        radial-gradient(1px 1px at 25% 65%, rgba(255,255,255,.7), transparent 60%),
+        radial-gradient(2px 2px at 60% 30%, rgba(255,255,255,.9), transparent 60%),
+        radial-gradient(1px 1px at 75% 55%, rgba(255,255,255,.65), transparent 60%),
+        radial-gradient(2px 2px at 90% 18%, rgba(255,255,255,.85), transparent 60%),
+        radial-gradient(1px 1px at 40% 10%, rgba(255,255,255,.55), transparent 60%),
+        radial-gradient(1px 1px at 55% 80%, rgba(255,255,255,.55), transparent 60%),
+        radial-gradient(2px 2px at 15% 85%, rgba(255,255,255,.7), transparent 60%);
+    }
 
-        .menu a:hover {
-            color: #ffd700;
-            text-shadow: 0 0 8px #ffd700;
-        }
+    .container{
+      width: 920px;
+      margin: auto;
+      padding: 18px 0 30px;
+    }
 
-        /* Content */
-        .content {
-            padding: 30px;
-            background-color: rgba(255,255,255,0.05);
-            margin-top: 20px;
-            border-radius: 20px;
-        }
+ 
+    .topbar{
+      position: fixed;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(920px, 92%);
+      z-index: 9999;
 
-        h2 {
-            text-align: center;
-            margin-bottom: 5px;
-        }
+      padding: 14px 14px;
+      border-radius: var(--radius);
+      background: rgba(0,0,0,.58);
+      border: 1px solid rgba(255,255,255,.16);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
 
-        .intro {
-         display: flex;
-         justify-content: center;
-         text-align: center;
-         font-style: italic;
-        color: #ddddff;
-         margin-bottom: 25px;
-        }
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
 
-        .image-center {
-            text-align: center;
-            margin: 25px 0;
-        }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      min-width: 260px;
+    }
+    .orb{
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, #fff, var(--violet) 35%, #2b1055 70%);
+      box-shadow: 0 0 18px rgba(124,92,255,.55);
+      border: 1px solid rgba(255,255,255,.14);
+    }
+    .brand b{
+      display:block;
+      letter-spacing: 1px;
+      font-size: 14px;
+      line-height: 1.2;
+    }
+    .brand span{
+      display:block;
+      font-size: 11px;
+      color: var(--muted);
+      opacity:.95;
+      margin-top: 2px;
+      line-height: 1.2;
+    }
 
-        .image-center img {
-            width: 420px;
-            height: 260px;
-            border-radius: 15px;
-            cursor: pointer;
-            box-shadow: 0 0 20px rgba(255,255,255,0.3);
-            transition: transform 0.3s;
-        }
+    .menu{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content:center;
+      align-items:center;
+    }
+    .menu a{
+      color:#fff;
+      text-decoration:none;
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: 1px;
+      padding: 10px 13px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.16);
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+    }
+    .menu a:hover{
+      transform: translateY(-1px);
+      background: rgba(255,215,0,.10);
+      color: var(--gold);
+      box-shadow: 0 0 18px rgba(255,215,0,.14);
+    }
 
-        .image-center img:hover {
-            transform: scale(1.05);
-        }
+    .clock{
+      padding: 10px 12px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 0 22px rgba(67,215,255,.10);
+      text-align:left;
+      min-width: 260px;
+    }
+    .clock .time{
+      font-weight: 900;
+      letter-spacing: 2px;
+      font-size: 16px;
+      text-shadow: 0 0 16px rgba(255,255,255,.20);
+    }
+    .clock .date{
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+    .clock .greet{
+      font-size: 12px;
+      color: var(--gold);
+      margin-top: 6px;
+      font-weight: 900;
+    }
 
-        .content p {
-            text-align: justify;
-            line-height: 1.8;
-        }
+    /* ===== BANNER ===== */
+    .banner{
+      margin-top: 14px;
+      border-radius: var(--radius);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,.12);
+      position: relative;
+    }
+    .banner img{
+      width: 100%;
+      display:block;
+      filter: brightness(1.25) contrast(1.10) saturate(1.10);
+    }
+    .banner::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(650px 250px at 20% 25%, rgba(124,92,255,.10), transparent 60%),
+        radial-gradient(650px 260px at 80% 28%, rgba(67,215,255,.08), transparent 60%),
+        linear-gradient(180deg, rgba(0,0,0,.00), rgba(0,0,0,.16) 55%, rgba(0,0,0,.28));
+      pointer-events:none;
+    }
+    .banner-text{
+      position:absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      padding: 14px 14px;
+      border-radius: 18px;
+      background: rgba(0,0,0,.55);
+      border: 1px solid rgba(255,255,255,.18);
+      backdrop-filter: blur(8px);
+      z-index: 1;
+    }
+    .banner-text h1{
+      margin: 0 0 6px;
+      font-size: 22px;
+      letter-spacing: .6px;
+      text-shadow: 0 0 18px rgba(255,255,255,.18);
+    }
+    .banner-text p{
+      margin:0;
+      color:#eef0ff;
+      font-style: italic;
+      font-size: 13px;
+      line-height: 1.55;
+    }
 
-        /* Navigation */
-        .navigation {
-            text-align: center;
-            margin-top: 30px;
-        }
+   
+    .card{
+      margin-top: 16px;
+      padding: 22px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.09);
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
 
-        .navigation a {
-            display: inline-block;
-            margin: 8px 10px;
-            padding: 8px 15px;
-            border: 1px solid #ffffff;
-            border-radius: 20px;
-            color: white;
-            text-decoration: none;
-            font-size: 14px;
-        }
+    .card h2{
+      text-align:center;
+      margin: 0 0 8px;
+      letter-spacing: .5px;
+    }
 
-        .navigation a:hover {
-            background-color: #ffffff;
-            color: #000000;
-        }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            margin-top: 30px;
-            padding: 20px;
-            background-color: #ffffff;
-            color: #000000;
-            border-radius: 20px 20px 0 0;
-            font-weight: bold;
-        }
-    </style>
+    .intro-wrap{
+      display:flex;
+      justify-content:center;
+      width:100%;
+    }
+    .intro{
+      text-align:center;
+      color: var(--muted);
+      font-style: italic;
+      max-width: 720px;
+      line-height: 1.65;
+      margin: 0 0 18px;
+    }
+
+    .image-center{
+      text-align:center;
+      margin: 18px 0 8px;
+    }
+    .image-center img{
+      width: 520px;
+      max-width: 100%;
+      border-radius: 16px;
+      cursor:pointer;
+      border: 1px solid rgba(255,255,255,.16);
+      box-shadow: 0 0 22px rgba(255,255,255,.12);
+      transition: transform .25s ease;
+    }
+    .image-center img:hover{ transform: scale(1.03); }
+
+    .hint{
+      text-align:center;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 10px;
+      opacity: .95;
+    }
+
+    .card p{
+      text-align: justify;
+      line-height: 1.9;
+      color: #ffffff;
+      opacity: .96;
+      margin: 0 0 12px;
+    }
+
+    /* 3 kolom info kecil */
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .mini{
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.16);
+    }
+    .mini b{
+      display:block;
+      margin-bottom: 6px;
+      letter-spacing:.4px;
+    }
+    .mini span{
+      display:block;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .navigation{
+      text-align:center;
+      margin-top: 16px;
+    }
+    .navigation a{
+      display:inline-block;
+      margin: 8px 10px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      color:#fff;
+      text-decoration:none;
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing:.6px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.18);
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .navigation a:hover{
+      transform: translateY(-1px);
+      background: rgba(67,215,255,.12);
+      box-shadow: 0 0 22px rgba(67,215,255,.12);
+    }
+
+    footer{
+      margin-top: 18px;
+      padding: 16px;
+      text-align:center;
+      border-radius: 20px 20px 0 0;
+      background: rgba(0,0,0,.70);
+      border: 1px solid rgba(255,255,255,.16);
+      color:#fff;
+      font-weight: 900;
+      box-shadow: var(--shadow);
+      line-height: 1.5;
+    }
+
+    @media(max-width: 980px){
+      .container{ width: 92%; }
+      body{ padding-top: 165px; }
+      .topbar{ justify-content:center; }
+      .clock{ width:100%; }
+      .grid3{ grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 
 <body>
-
-    <div class="container">
-
-        <!-- Banner -->
-        <div class="banner">
-            <img src="img/banner.jpg" alt="Banner Astronomi">
-        </div>
-
-        <!-- Menu -->
-        <div class="menu">
-            <a href="index.html">HOME</a>
-            <a href="gallery.html">GALLERY</a>
-            <a href="contact.html">CONTACT US</a> |
-            <a href="about us.html">ABOUT US</a>
-        </div>
-
-        <!-- Content -->
-        <div class="content">
-            <h2>🌌 Selamat Datang di Dunia Astronomi 🌌</h2>
-            <p class="intro">
-                Menjelajahi misteri alam semesta yang luas, indah, dan penuh rahasia.
-            </p>
-
-            <div class="image-center">
-                <img src="img/astronomi  2.jpg" alt="Astronomi" onclick="infoAstronomi()">
-            </div>
-
-            <p>
-                Astronomi adalah ilmu pengetahuan yang mempelajari benda-benda langit seperti bintang, planet, satelit, asteroid, komet, hingga galaksi. Sejak zaman dahulu, manusia telah mengamati langit malam untuk memahami waktu, musim, dan arah.
-            </p>
-
-            <p>
-                Dengan berkembangnya teknologi teleskop dan ilmu fisika, astronomi modern mampu mengungkap rahasia besar alam semesta, termasuk asal-usul galaksi, lubang hitam, serta kemungkinan adanya kehidupan di luar Bumi.
-            </p>
-
-            <p>
-                Alam semesta begitu luas dan menakjubkan. Tata surya kita hanyalah bagian kecil dari Galaksi Bima Sakti, yang berisi ratusan miliar bintang dan mungkin lebih banyak planet yang belum teridentifikasi.
-            </p>
-
-            <div class="navigation">
-                <a href="hal 2 astronomi.html">➡️ Halaman 2 Astronomi</a>
-                <a href="hal 3 astronomi.html">➡️ Halaman 3 Astronomi</a>
-            </div>
-        </div>
-
-        <!-- Footer -->
-        <footer>
-            &copy; 2025  
-            <br>
-            Puji Lestari | 25101170058 | 01SIFP001
-        </footer>
-
+  <!-- TOPBAR (fixed) -->
+  <div class="topbar">
+    <div class="brand">
+      <div class="orb" aria-hidden="true"></div>
+      <div>
+        <b>DUNIA ASTRONOMI</b>
+        <span>Eksplorasi bintang • planet • galaksi</span>
+      </div>
     </div>
 
-    <!-- ================= JAVASCRIPT ================= -->
-    <script>
-    function infoAstronomi() {
-        const waktu = new Date().getHours();
-        let pesan;
+    <div class="menu">
+      <a href="index.html">HOME</a>
+      <a href="GALLERY.html">GALLERY</a>
+      <a href="CONTACT.html">CONTACT US</a>
+      <a href="ABOUT US.html">ABOUT US</a>
+    </div>
 
-        if (waktu >= 5 && waktu < 12) {
-            pesan = "Selamat pagi 🌅\nWaktu yang tepat untuk belajar astronomi!";
-        } else if (waktu >= 12 && waktu < 15) {
-            pesan = "Selamat siang ☀️\nMari jelajahi keindahan alam semesta.";
-        } else if (waktu >= 15 && waktu < 18) {
-            pesan = "Selamat sore 🌇\nLangit mulai indah untuk diamati.";
-        } else {
-            pesan = "Selamat malam 🌌\nWaktu terbaik mengamati bintang dan planet.";
-        }
+    <div class="clock" aria-label="Jam dan tanggal">
+      <div class="time" id="astroTime">--:--:--</div>
+      <div class="date" id="astroDate">Memuat tanggal...</div>
+      <div class="greet" id="astroGreet">✨</div>
+    </div>
+  </div>
 
-        alert(pesan);
+  <div class="container">
+    <!-- BANNER -->
+    <div class="banner">
+      <img src="img/banner.jpg" alt="Banner Astronomi">
+      <div class="banner-text">
+        <h1>🌌 Selamat Datang di Dunia Astronomi</h1>
+        <p>Rasakan pengalaman menjelajah kosmos—dari cahaya bintang terdekat hingga galaksi yang berjarak miliaran tahun cahaya.</p>
+      </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="card">
+      <h2>✨ Astronomi Itu Apa? ✨</h2>
+
+      <div class="intro-wrap">
+        <p class="intro">
+          Astronomi adalah jendela manusia untuk memahami keindahan dan misteri alam semesta yang tak terbatas.
+          Melalui astronomi, kita mempelajari bagaimana bintang lahir dan mati, bagaimana planet bergerak pada orbitnya,
+          serta bagaimana galaksi terbentuk dan berevolusi selama miliaran tahun.
+        </p>
+      </div>
+
+      <div class="image-center">
+        <img src="img/astronomi  2.jpg" alt="Astronomi" onclick="infoAstronomi()">
+      </div>
+      <div class="hint">Klik gambar untuk pesan sesuai waktu ⏳✨</div>
+
+      <p>
+        Astronomi mempelajari benda-benda langit seperti bintang, planet, satelit, asteroid, komet, nebula, dan galaksi.
+        Sejak zaman dahulu, manusia menatap langit malam untuk menentukan arah perjalanan, memahami musim, dan menyusun kalender.
+        Pengamatan sederhana ini berkembang menjadi ilmu yang sangat maju, memadukan matematika, fisika, dan teknologi modern.
+      </p>
+
+      <p>
+        Di era sekarang, astronomi tidak hanya mengandalkan mata telanjang. Teleskop optik, radio, hingga satelit luar angkasa
+        mampu menangkap berbagai jenis “cahaya” (gelombang elektromagnetik) yang tidak terlihat oleh mata manusia.
+        Dari data tersebut, para ilmuwan dapat mengungkap struktur galaksi, kelahiran bintang di nebula, hingga tanda-tanda
+        ekstrem seperti pancaran dari sekitar lubang hitam.
+      </p>
+
+      <p>
+        Tata Surya kita hanyalah bagian kecil dari Galaksi Bima Sakti—sebuah galaksi spiral yang diperkirakan berisi ratusan miliar bintang.
+        Menariknya, banyak planet di luar Tata Surya (eksoplanet) telah ditemukan, dan beberapa berada di “zona laik huni”.
+        Inilah alasan astronomi juga berperan besar dalam pencarian kemungkinan kehidupan di luar Bumi.
+      </p>
+
+      <p>
+        Lebih dari sekadar ilmu, astronomi mengajarkan rasa ingin tahu dan kekaguman. Setiap bintang yang terlihat di langit
+        adalah bagian dari kisah kosmos yang sangat panjang. Saat kita mempelajari astronomi, kita juga belajar memahami posisi
+        manusia—kecil namun bermakna—di alam semesta yang luas.
+      </p>
+
+      <div class="grid3">
+        <div class="mini">
+          <b>🔭 Observasi</b>
+          <span>Langit gelap jauh dari lampu kota adalah tempat terbaik untuk melihat detail bintang dan rasi.</span>
+        </div>
+        <div class="mini">
+          <b>🪐 Tata Surya</b>
+          <span>Planet memantulkan cahaya Matahari. Jupiter & Venus sering jadi objek favorit pemula.</span>
+        </div>
+        <div class="mini">
+          <b>🌌 Galaksi</b>
+          <span>Bima Sakti adalah rumah kita. Cahaya dari galaksi jauh adalah “foto masa lalu” alam semesta.</span>
+        </div>
+      </div>
+
+      <div class="navigation">
+        <a href="hal 2 astronomi.html">➡️ Halaman 2 Astronomi</a>
+        <a href="hal 3 astronomi.html">➡️ Halaman 3 Astronomi</a>
+      </div>
+    </div>
+
+    <footer>
+      &copy; 2025<br>
+      Puji Lestari | 25101170058 | 01SIFP001
+    </footer>
+  </div>
+
+  <script>
+    function pad2(n){ return String(n).padStart(2,"0"); }
+
+    function greetingByHour(h){
+      if(h >= 5 && h < 12) return "Selamat pagi 🌅";
+      if(h >= 12 && h < 15) return "Selamat siang ☀️";
+      if(h >= 15 && h < 18) return "Selamat sore 🌇";
+      return "Selamat malam 🌌";
     }
-</script>
+
+    function updateClock(){
+      const now = new Date();
+      const h = now.getHours();
+      const m = now.getMinutes();
+      const s = now.getSeconds();
+
+      document.getElementById("astroTime").textContent = `${pad2(h)}:${pad2(m)}:${pad2(s)}`;
+      document.getElementById("astroDate").textContent =
+        new Intl.DateTimeFormat("id-ID", { weekday:"long", year:"numeric", month:"long", day:"numeric" }).format(now);
+      document.getElementById("astroGreet").textContent = greetingByHour(h) + " ✨";
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+
+    function infoAstronomi(){
+      const waktu = new Date().getHours();
+      let pesan;
+
+      if (waktu >= 5 && waktu < 12) pesan = "Selamat pagi 🌅\\nWaktu yang pas untuk belajar astronomi!";
+      else if (waktu >= 12 && waktu < 15) pesan = "Selamat siang ☀️\\nYuk jelajahi kosmos—planet & bintang menanti.";
+      else if (waktu >= 15 && waktu < 18) pesan = "Selamat sore 🌇\\nBersiap! Langit malam sebentar lagi indah.";
+      else pesan = "Selamat malam 🌌\\nWaktu terbaik mengamati bintang dan planet.";
+
+      alert(pesan);
+    }
+  </script>
 </body>
 </html>
-
-
-
-
-
